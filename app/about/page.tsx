@@ -52,7 +52,7 @@ export default function About() {
                 </div>
 
             </div>
-            <div className="bg-stone-800 text-stone-100 min-h-[50vh] flex flex-col justify-center items-center text-center">
+            <div className="bg-[#251c0166] text-stone-100 min-h-[50vh] flex flex-col justify-center items-center text-center">
                 <h2 className="my-4 text-3xl font-extrabold leading-[1.26] tracking-tight text-stone-900 md:text-3xl lg:text-4xl dark:text-white">Meet Our Team</h2>
 
                 <div className="max-w-7xl mx-auto flex justify-center items-center lg:gap-4">
