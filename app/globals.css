@@ -13,7 +13,11 @@
     --foreground-rgb: 255, 255, 255;
   }
 }
-
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -22,4 +26,14 @@ body {
     rgb(0, 0, 0)
   )
     rgb(16, 10, 0)
+}
+
+section {
+  @apply w-full md:py-12 py-6;
+}
+main section:first-of-type {
+  @apply pt-0;
+}
+main section.banner {
+  @apply p-0 m-0;
 }

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Navbar() {
     return (
-        <header>
-            <nav className="bg-white border-stone-200 dark:bg-[#27201578]">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white border-stone-200 dark:bg-[#0f0d08fa]">
+            <nav className="">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link href="/" className="flex items-center">
                         {/* <img src="/vercel.svg" className="h-8 mr-3" alt="Arcade Logo" /> */}

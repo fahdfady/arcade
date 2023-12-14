@@ -1,4 +1,5 @@
 import Banner from './components/Banner'
+import Clients from './components/Clients'
 import Mission from './components/Mission'
 
 export default function Home() {
@@ -7,6 +8,8 @@ export default function Home() {
       <Banner />
 
       <Mission />
+
+      <Clients />
     </>
   )
 }
