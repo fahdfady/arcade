@@ -1,25 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/*==================== VARIABLES CSS ====================*/
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --secondary-color: #8b6bd1;
+  --secondary-color-faded: rgba(139, 107, 209, 0.6);
+  --third-color: rgb(61, 38, 112);
+  --text-color: #000;
+  --min-width: 80%;
+  --max-width: 1200px;
+  --min-height: 600px;
+  --font-family: "Inter", sans-serif;
+  --font-size-title: 22px;
+  --font-size-icon: 32px;
+  --default-padding: 8px;
+  --animation-timing: 0.2s;
+  --shadow-default: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgb(0, 0, 0)
-  )
-    rgb(16, 10, 0)
+  font-family: var(--font-family);
+  font-size: 16px;
+  text-transform: capitalize;
+  overflow-x: hidden;
+  background: #0e001b;
+  background: linear-gradient(270deg, #010003, #0f001c);
+  color: #fff;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.page-container {
+  position: relative;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #1f0038;
+  height: 100%;
+  z-index: 10000000000000000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+.loaded .loader-wrapper .loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loader-wrapper .loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 75px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.loader-wrapper .loader .loader-outter {
+  position: absolute;
+  border: 4px solid rgb(139, 107, 209);
+  border-left-color: transparent;
+  border-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+.loader-wrapper .loader .loader-inner {
+  position: absolute;
+  border: 4px solid rgb(139, 107, 209);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  border-right: 0;
+  border-top-color: transparent;
+  animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+@keyframes loader-outter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.cursor-container .cursor {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  transition: 0.09s;
+  pointer-events: none;
+  z-index: 9999999;
+}
+.cursor-container .dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: none;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+main section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply max-w-screen-xl min-h-[85vh] mx-auto py-2;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-title);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ribbon {
+  position: absolute;
+  top: -4px;
+  right: 15px;
+  z-index: 99;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 10px;
+}
+.ribbon::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 0 4px;
+  transform: rotate(270deg);
+  border-color: transparent transparent transparent #634e5b;
+}
+.ribbon::before {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 0 4px;
+  border-color: transparent transparent transparent #634e5b;
+}/*# sourceMappingURL=globals.css.map */

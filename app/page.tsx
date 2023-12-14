@@ -1,12 +1,20 @@
-import Banner from './components/Banner'
-import Mission from './components/Mission'
+'use client'
+
+// import { useFetch } from './hooks/useFetch';
+import Information from './components/information';
+import Skills from './components/skills';
+import Projects from './components/projects';
+import Footer from './components/footer';
 
 export default function Home() {
   return (
-    <>
-      <Banner />
 
-      <Mission />
+    <>
+      <Information />
+
+      <Skills />
+
+      <Projects />
     </>
   )
 }

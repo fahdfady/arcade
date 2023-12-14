@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+// @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
+
+
+/*==================== VARIABLES CSS ====================*/
+
+@mixin centerAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerX {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin centerY {
+    display: flex;
+    align-items: center;
+}
+
+:root {
+    --secondary-color: #8b6bd1;
+    --secondary-color-faded: rgba(139, 107, 209, 0.6);
+    --third-color: rgb(61, 38, 112);
+    --text-color: #000;
+    --min-width: 80%;
+    --max-width: 1200px;
+    --min-height: 600px;
+    --font-family: "Inter", sans-serif;
+    --font-size-title: 22px;
+    --font-size-icon: 32px;
+    --default-padding: 8px;
+    --animation-timing: 0.2s;
+    --shadow-default: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 0px;
+    // border: 1px solid rgb(35, 21, 44)
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    text-transform: capitalize;
+    overflow-x: hidden;
+    background: #0e001b;
+    background: linear-gradient(270deg, #010003, #0f001c);
+    // background-size: 400% 400%;
+    // animation: gradient 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.page-container {
+    position: relative;
+}
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #1f0038;
+    height: 100%;
+    z-index: 9999999999999999;
+    overflow: hidden;
+    @include centerAll();
+
+    .loaded & {
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: all 0.3s 1s ease-out;
+
+        .loader {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+    }
+
+    .loader {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 75px;
+        display: inline-block;
+        vertical-align: middle;
+
+        .loader-outter {
+            position: absolute;
+            border: 4px solid rgb(139, 107, 209);
+            border-left-color: transparent;
+            border-bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+            animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+        }
+
+        .loader-inner {
+            position: absolute;
+            border: 4px solid rgb(139, 107, 209);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            left: calc(50% - 20px);
+            top: calc(50% - 20px);
+            border-right: 0;
+            border-top-color: transparent;
+            -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+            animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+        }
+    }
+}
+
+@keyframes loader-outter {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+.cursor-container {
+    .cursor {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 2px solid var(--secondary-color);
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        -webkit-transition: none;
+        transition: 0.09s;
+        pointer-events: none;
+        z-index: 9999999;
+    }
+
+    .dot {
+        width: 5px;
+        height: 5px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: none;
+        transition: none;
+        pointer-events: none;
+        z-index: 999999;
+    }
+}
+
+// .not-footer {
+//     padding-bottom: 100px;
+// }
+
+main {
+    section {
+        @include centerAll();
+        @apply max-w-screen-xl min-h-[85vh] mx-auto py-2;
+    }
+
+
+}
+
+.sectionTitle {
+    font-size: var(--font-size-title);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+    @include centerAll();
+}
+
+.ribbon {
+    position: absolute;
+    top: -4px;
+    right: 15px;
+    z-index: 99;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 10px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        border-color: transparent transparent transparent #634e5b;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: -4px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        border-color: transparent transparent transparent #634e5b;
+    }
+}
