@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "name": "HTML",
+      "img": "https://i.ibb.co/fn0c1g4/html-5.png",
+      "link": "https://html.com/"
+    },
+     {
+       "id": 2,
+       "name": "CSS",
+       "img": "https://i.ibb.co/3mz6PLP/css3.png",
+       "link": "https://www.w3.org/Style/CSS/Overview.en.html"
+     },
+     {
+       "id": 3,
+       "name": "JavaScript",
+       "img": "https://i.ibb.co/HzT8ZX3/js.png",
+       "link": "https://www.javascript.com/"
+     },
+     {
+       "id": 5,
+       "name": "React",
+       "img": "https://i.ibb.co/Yt1Tgwg/pngwing-com-1-1.png",
+       "link": "https://reactjs.org/"
+     },
+     {
+       "id": 6,
+       "name": "Nextjs",
+       "img": "https://i.ibb.co/WtSN38H/pngwing-com.png",
+       "link": "https://nextjs.org/"
+     },
+     {
+       "id": 7,
+       "name": "SASS",
+       "img": "https://i.ibb.co/dj3Ksxs/sass.png",
+       "link": "https://sass-lang.com"
+     },
+     {
+       "id": 9,
+       "name": "Jquery",
+       "img": "https://i.ibb.co/DtSnYpK/jquery.png",
+       "link": "https://jquery.com/"
+     },
+     {
+       "id": 13,
+       "name": "bootstrap",
+       "img": "https://i.ibb.co/s5wFDpw/bootstrap.png",
+       "link": "https://getbootstrap.com/"
+     },
+     {
+       "id": 15,
+       "name": "tailwind",
+       "img": "https://i.ibb.co/BndDgtc/Tailwind-CSS-Logo-svg-2.png",
+       "link": "http://tailwindcss.com/"
+     }
+   ]
