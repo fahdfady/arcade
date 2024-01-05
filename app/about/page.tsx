@@ -19,7 +19,6 @@ export default function About() {
                 // db is toJSON beacuse of an error in typescript      to find to avoid using toJSON which no longer exists
                 const querySnapshot = await getDocs(queryRef);
                 setMembers(querySnapshot.docs.map(doc => doc.data()))
-                console.log(members)
                 setDataFetched(true);
             }
             catch (e) {
@@ -52,8 +51,8 @@ export default function About() {
                 </div>
 
             </div>
-            <div className="bg-stone-800 text-stone-100 min-h-[50vh] flex flex-col justify-center items-center text-center">
-                <h2 className="my-4 text-3xl font-extrabold leading-[1.26] tracking-tight text-stone-900 md:text-3xl lg:text-4xl dark:text-white">Meet Our Team</h2>
+            {/* <div className=" bg-gradient-to-r from-[#f0a500] to-[#ffbf38] text-stone-100 text-shadow min-h-[50vh] flex flex-col justify-center items-center text-center">
+                <h2 className="my-4 text-3xl font-extrabold leading-[1.26] tracking-tight text-stone-100 md:text-3xl lg:text-4xl">Meet Our Team</h2>
 
                 <div className="max-w-7xl mx-auto flex justify-center items-center lg:gap-4">
                     {/* <div className="max-w-[20rem] py-3 px-1 flex flex-col justify-center items-center gap-3">
@@ -72,7 +71,7 @@ export default function About() {
                         <h2 className="text-5xl font-extrabold">Mohamed Essam</h2>
 
                         <h3 className="text-3xl font-semibold">CEO</h3>
-                    </div> */}
+                    </div> 
                     {members.map((member) => (
                         <div
                             className="max-w-[20rem] py-3 px-1 flex flex-col justify-center items-center gap-3"
@@ -96,7 +95,7 @@ export default function About() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             <div className="lg:max-w-7xl mx-auto py-5 px-4 flex flex-col gap-4">
                 <div className="text-center">

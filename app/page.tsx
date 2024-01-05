@@ -1,5 +1,6 @@
 import Banner from './components/Banner'
-import Mission from './components/Mission'
+import Clients from './components/Clients'
+import Mission from './components/ChooseUs'
 
 export default function Home() {
   return (
@@ -7,6 +8,8 @@ export default function Home() {
       <Banner />
 
       <Mission />
+
+      <Clients />
     </>
   )
 }

@@ -7,48 +7,19 @@ export default function Footer() {
             <div className="mx-auto mt-4 w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
-                        <Link href="/" className="flex items-center gap-1">
-                            <Image src="/logo.png" width={70} height={40} alt="Arcade Logo" />
+                        <Link href="/" className="flex items-center gap-2">
+                            <Image
+                                width={50} height={50}
+                                quality={40}
+                                src="/arcadelogo.png"
+                                alt="Arcade Logo" />
                             <span className="self-center text-2xl uppercase font-semibold whitespace-nowrap text-white">Arcade</span>
                         </Link>
-                    </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold uppercase text-white">pages</h2>
-                            <ul className="text-gray-400 font-medium">
-                                <li className="mb-4">
-                                    <Link href="/" className="hover:underline duration:100">about</Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link href="/" className="hover:underline duration:100">services</Link>
-                                </li>
-                                <li>
-                                    <Link href="/" className="hover:underline duration:100">contact</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold uppercase text-white">Follow us</h2>
-                            <ul className="text-gray-400 font-medium">
-                                <li className="mb-4">
-                                    <Link href="/" className="hover:underline duration:100">LinkedIn</Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link href="/" className="hover:underline duration:100">Facebook</Link>
-                                </li>
-                                <li className="mb-4">
-                                    <Link href="https://twitter.com/LakersFanFahdev" className="hover:underline duration:100">Twitter</Link>
-                                </li>
-                                <li>
-                                    <Link href="/" className="hover:underline duration:100">website</Link>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm sm:text-center text-gray-400">© 2023 <Link href="/" className="hover:underline duration:100">Arcade</Link>. All Rights Reserved.
+                    <span className="text-sm sm:text-center text-gray-400">© 2024 <Link href="/" className="hover:underline duration:100">Arcade</Link>. All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-4 sm:justify-center sm:mt-0">
                         <Link href="/" className="hover:text-yellow-300 duration-100">
