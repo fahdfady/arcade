@@ -17,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>{children}</body>
+        className={`bg-black text-white ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>
+          <main className="relative min-h-screen bg-gradient-to-tl from-black via-[#805f2442] to-black">{children}</main></body>
     </html>
   );
 }
