@@ -11,7 +11,7 @@ const navigation = [
 export default async function Home() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden">
+      <main className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden">
         <nav className="my-10 sm:my-16 animate-fade-in">
           <ul className="flex items-center justify-center gap-4">
             {navigation.map((item) => (
@@ -38,7 +38,7 @@ export default async function Home() {
           <h2 className="text-xs sm:text-sm md:text-lg text-zinc-300">The ultimate solution for your business needs</h2>
           <h2 className="text-xs sm:text-sm md:text-lg text-zinc-300">From 2021 we introduce our services to all industrial sectors (Manufacturing, Constructions, Maritime,…)</h2>
         </div>
-      </div>
+      </main>
     </>
   );
 }

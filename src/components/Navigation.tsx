@@ -12,7 +12,7 @@ import Link from "next/link"
 
 export default function Navigation() {
     return (
-        <div className="fixed inset-x-0 top-0 z-50 backdrop-blur duration-200 border-b bg-zinc-900/0 border-transparent">
+        <header className="fixed inset-x-0 top-0 z-50 backdrop-blur duration-200 border-b bg-zinc-900/0 border-transparent">
             <NavigationMenu>
                 <Link className="duration-200 text-zinc-300 hover:text-zinc-100" href="/"><ChevronLeft size={24} /></Link>
                 <NavigationMenuList>
@@ -28,6 +28,6 @@ export default function Navigation() {
 
                 </NavigationMenuList>
             </NavigationMenu>
-        </div>
+        </header>
     )
 }
