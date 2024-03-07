@@ -22,10 +22,6 @@ export default function Navigation() {
                     <NavigationMenuItem>
                         <NavigationMenuLink href="/services/">Services</NavigationMenuLink>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink href="/contact/">Contact</NavigationMenuLink>
-                    </NavigationMenuItem>
-
                 </NavigationMenuList>
             </NavigationMenu>
         </header>
