@@ -1,13 +1,15 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Component() {
     return (
         <main className="flex flex-col items-center justify-center min-h-screen space-y-4 p-4 text-center">
-            <img
+            <Image
                 alt="Arcade Logo"
-                className="aspect-[2/1] overflow-hidden object-contain object-center"
-                width={130}
-                height={130}
+                className="overflow-hidden object-contain object-center"
+                width={90}
+                height={90}
+                quality={28}
                 src="/logo.png"
             />
             <div className="space-y-2">
